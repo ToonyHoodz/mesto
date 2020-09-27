@@ -1,0 +1,9 @@
+.profile__edit-button{
+   border: 1px solid white;
+   align-self: flex-end;
+   background-color: black;
+   grid-area: edit_bttn; 
+}
+
+
+

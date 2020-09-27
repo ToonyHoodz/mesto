@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Место</title>
+   <link rel="stylesheet" href="pages/style.css">
+</head>
+
+<body class="page">
+   <header class="section header">
+      <img src="./images/Logo.svg" alt="Логотип Место" class="header__logo">
+   </header>
+   <main>
+      <section class="section profile">
+         <img src="./images/image.jpg" alt="Портрет Жак-Ив Кусто" class="profile__avatar">
+            <h2 class="profile__info-name">Жак-Ив Кусто</h2>
+            <h3 class="profile__info-activity">Исследователь океана</h3>
+            <button class="button profile__edit-button"><img class="profile__edit-button-img" src="./images/Vector.svg" alt="Иконка редактирования"></button>
+            <button class="button profile__add-bttn"><img class = "profile__add-bttn-img" src="./images/Vector(1).svg" alt="Иконка добавления"></button>
+      </section>
+      <section class="section elements">
+         <div class="element">
+            <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Карачаевск</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+         <div class="element">
+            <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Гора Эльбрус</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+         <div class="element">
+            <img src="./images/Dombay.jpg" alt="Вид на гору Домбай" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Домбай</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+         <div class="element">
+            <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Гора Эльбрус</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+         <div class="element">
+            <img src="./images/Dombay.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Домбай</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+         <div class="element">
+            <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
+            <div class="element__description">
+               <h5 class="element__title">Карачаево-Черкесия</h5>
+               <button  class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+                     alt="Иконка сердечка"></button>
+            </div>
+         </div>
+      </section>
+      <footer class="section footer">
+         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+      </footer>
+      <div class="popup">
+         <div class="popup__container">
+            <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon"></button>
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <form class="popup__form" name="editForm" >
+               <input type="text"  name="forename" class="popup__input " >
+               <input type="text"name="work" class="popup__input  "
+                 >
+               <button type='submit' class="button_dark popup__button">Сохранить</button>
+            </form>
+         </div>
+      </div>
+   </main>
+   <script src="./script.js"></script>
+</body>
+</html>

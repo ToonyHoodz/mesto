@@ -1,0 +1,10 @@
+.button_dark{
+box-sizing: border-box;
+}
+
+
+.button_dark:hover{
+   opacity: 0.8;
+   cursor: pointer;
+}
+

@@ -1,0 +1,30 @@
+.profile__info-name{
+   color: white;
+   font-size: 42px;
+   line-height: 0.7;
+   font-weight: 500;
+   grid-area: Name;
+   margin: 0;
+   display: flex;
+   align-self: flex-end; 
+   font-family: Inter;
+   font-style: Medium;
+}
+
+
+@media screen and (max-width:900px) {
+  .profile__info-name{
+     align-self: unset;
+     font-size: 27px;
+     margin-right: 5px;
+     line-height: 0.85;
+  }
+}
+
+
+@media screen and (max-width:350px) {
+  .profile__info-name{
+     font-size: 23px;
+     padding-top: 3px;
+  }
+}

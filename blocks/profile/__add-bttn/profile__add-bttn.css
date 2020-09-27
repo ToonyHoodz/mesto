@@ -1,0 +1,19 @@
+.profile__add-bttn{
+   border: 2px solid white;
+   background-color: black;
+   grid-area: Add_bttn;
+   align-self: center;
+   min-height: 54px;
+}
+
+
+@media screen and (max-width:900px){
+   .profile__add-bttn{
+      min-height: 50px;
+      align-self: unset;
+      margin-top: 36px;
+      margin-left: auto;
+      margin-right: auto;
+      min-width: 282px;
+   }
+}
