@@ -10,7 +10,7 @@
 
 <body class="page">
    <header class="section header">
-      <img src="./images/Logo.svg" alt="Логотип Место" class="header__logo">
+      <div class="header__logo"></div>
    </header>
    <main>
       <section class="section profile">
@@ -24,51 +24,51 @@
          <article class="element">
             <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Карачаевск</h5>
+               <h2 class="element__title">Карачаевск</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
          <article class="element">
             <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Гора Эльбрус</h5>
+               <h2 class="element__title">Гора Эльбрус</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
          <article class="element">
             <img src="./images/Dombay.jpg" alt="Вид на гору Домбай" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Домбай</h5>
+               <h2 class="element__title">Домбай</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
          <article class="element">
             <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Гора Эльбрус</h5>
+               <h2 class="element__title">Гора Эльбрус</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
          <article class="element">
             <img src="./images/Dombay.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Домбай</h5>
+               <h2 class="element__title">Домбай</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
          <article class="element">
             <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
-               <h5 class="element__title">Карачаево-Черкесия</h5>
+               <h2 class="element__title">Карачаево-Черкесия</h2>
                <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
-            </article>
-         </div>
+                  </div>
+               </article>
       </section>
       <footer class="section footer">
          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -77,15 +77,14 @@
          <div class="popup__container">
             <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form" name="editForm" >
-               <input type="text"  name="forename" class="popup__input popup__input-name" >
-               <input type="text"name="work" class="popup__input popup__input-work"
-                 >
+            <form class="popup__form" name="editForm">
+               <input type="text" class="popup__input popup__input-name">
+               <input type="text" class="popup__input popup__input-work">
                <button type="submit" class="button button_dark popup__button">Сохранить</button>
             </form>
          </div>
       </div>
    </main>
-   <script src="./script.js"></script>
+   <script src="./scripts/script.js"></script>
 </body>
 </html>

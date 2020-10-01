@@ -10,7 +10,6 @@ const editForm = document.forms.editForm;
 
 
 const editText = document.querySelector('.profile'); 
-const screenWidth = window.screen.width 
 
 
 function editTextHtml() {

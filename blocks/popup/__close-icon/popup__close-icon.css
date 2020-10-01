@@ -1,13 +1,5 @@
-.popup__close-icon{
-   min-width: 58px;
-   max-height: 58px;
-}
-
-
-
 @media screen and (max-width:750px){
    .popup__close-icon{
-      min-width: 26px;
       max-height: 26px;
    }
 }

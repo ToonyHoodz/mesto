@@ -1,12 +1,12 @@
 .profile__info-activity{
    font-weight: 400;
-   font-family: Inter;
-   font-size: 18px;
+   font-family: 'inter', ‘Arial’, sans-serif;
    line-height: 1;
    color: #FFFFFF;
    margin: 0;
    margin-top: 16px;
    grid-area: job;
+   text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
 }
 
 @media screen and (max-width:900px){

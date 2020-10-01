@@ -7,8 +7,8 @@
    margin: 0;
    display: flex;
    align-self: flex-end; 
-   font-family: Inter;
-   font-style: Medium;
+   font-family: 'inter', ‘Arial’, sans-serif;
+   text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
 }
 
 

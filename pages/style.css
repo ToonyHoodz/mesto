@@ -10,11 +10,3 @@
 @import url(../blocks/section/section.css);
 @import url(../blocks/button/button.css);
 
-
-html {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
-
