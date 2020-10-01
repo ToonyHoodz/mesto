@@ -1,10 +1,10 @@
 .profile__info{
-display: flex;
-flex-direction: row;
+display: contents;
 }
 
 @media screen and (max-width:900px) {
   .profile__info{
      margin: 14px 49px 14px 70px;
+     display: flex;
   }
 }

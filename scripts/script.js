@@ -1,51 +1,36 @@
-const buttonCloseEdit = document.querySelector('.popup__close-bttn');
+var buttonCloseEdit = document.querySelector('.popup__close-bttn');
 const buttonOpenEdit = document.querySelector('.profile__edit-button');
+const popup = document.querySelector('.popup')
 const popupEdit = document.querySelector('.popup');
 const nameInput = document.querySelector('.popup__input-name');
 const workInput = document.querySelector('.popup__input-work');
 const name = document.querySelector('.profile__info-name');
 const work = document.querySelector('.profile__info-activity');
-const editForm = document.forms.editForm;
-
-
-
-const editText = document.querySelector('.profile'); 
-
-
-function editTextHtml() {
-   editText.innerHTML = ""
-   editText.innerHTML += '<img src="./images/image.jpg" alt="Портрет Жак-Ива Кусто" class="profile__avatar"><div class = "profile__info"><h2 class="profile__info-name">Жак - Ив Кусто</h2><button class="button profile__edit-button"><img class="profile__edit-button-img" src="./images/EditIcon(2).svg" alt="Иконка редактирования"></button></div><h3 class="profile__info-activity">Исследователь океана</h3><button class="button profile__add-bttn"><img class="profile__add-bttn-img" src="./images/VectorAddIcon(2).svg" alt="Иконка добавления"></button>';
-}
 
 
 
 
-
-if (window.innerWidth < 900) {
-   editTextHtml();
-   editText.classList.add('profile_new');
-   editText.classList.remove('profile');
-}
-
-
-
-
-
-//слушатели
-
-
-//функция открытия попапа
-function popupOpen(modalWindow) {
-   modalWindow.classList.add('popup_opened');
+//функция открытия попапа и ввода данных
+function popupOpen(popup) {
+   popup.classList.add('popup_opened');
    nameInput.value = name.textContent;
    workInput.value = work.textContent;
 }
 
+//слушатель на открытие
+buttonOpenEdit.addEventListener('click', function(){ 
+   popupOpen(popupEdit)
+});
 
 //функция закрытия попапа
-function popupClose(modalWindow) {
-   modalWindow.classList.remove('popup_opened');
+function popupClose(popup) {
+   popup.classList.remove('popup_opened');
 }
+
+//слушатель на закрытие
+buttonCloseEdit.addEventListener('click', function () {
+   popupClose(popupEdit)
+}); 
 
 //функция замены данных из попапа
 function editUserData(event) {
@@ -54,14 +39,9 @@ function editUserData(event) {
    work.textContent = workInput.value;
    popupClose(popupEdit)
 }
-buttonCloseEdit.addEventListener('click', function(){
-   popupClose(popupEdit)
-});
-buttonOpenEdit.addEventListener('click', function(){ 
-   popupOpen(popupEdit)
-});
-editForm.addEventListener('submit', editUserData);
 
+
+editForm.addEventListener('submit', editUserData);
 
 
 
