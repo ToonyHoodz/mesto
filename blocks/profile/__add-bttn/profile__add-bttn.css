@@ -4,6 +4,7 @@
    grid-area: Add_bttn;
    align-self: center;
    min-height: 54px;
+   border-radius: 2px;
 }
 
 
