@@ -1,11 +1,10 @@
 .profile__info-name{
    color: white;
    font-size: 42px;
-   line-height: 0.7;
+   line-height: 1.1;
    font-weight: 500;
    grid-area: Name;
    margin: 0;
-   display: flex;
    align-self: flex-end; 
    font-family: 'inter', ‘Arial’, sans-serif;
    text-overflow: ellipsis;

@@ -13,6 +13,7 @@
   grid-template-areas:
     "Photo Name edit_bttn . Add_bttn"
     "Photo job . . Add_bttn";
+    vertical-align: bottom;
     -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;

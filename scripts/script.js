@@ -17,10 +17,15 @@ function popupOpen(popup) {
    workInput.value = work.textContent;
 }
 
+
+
 //слушатель на открытие
 buttonOpenEdit.addEventListener('click', function(){ 
    popupOpen(popupEdit)
 });
+
+
+
 
 //функция закрытия попапа
 function popupClose(popup) {
