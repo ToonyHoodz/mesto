@@ -37,6 +37,8 @@ buttonCloseEdit.addEventListener('click', function () {
    popupClose(popupEdit)
 }); 
 
+//я не понял комментария ревьюера на тему того, что вторым параметром в обработчике достаточно вызвать функцию закрытия и не прописывать для этого новую функцию, ведь если я правильно понимаю, 
+
 //функция замены данных из попапа
 function editUserData(event) {
    event.preventDefault()
