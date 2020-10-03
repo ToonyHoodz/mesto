@@ -9,7 +9,7 @@
 
 .profile{
     display: grid;
-  grid-template-columns: 150px 312px 24px 242px 154px;
+  grid-template-columns: 150px 320px 24px 236px 154px;
   grid-template-areas:
     "Photo Name edit_bttn . Add_bttn"
     "Photo job . . Add_bttn";
