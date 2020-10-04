@@ -2,10 +2,9 @@
 .header__logo{
    max-width: 142px;
    min-height: 33.4px;
-   padding-bottom: 40.6px;
+   margin-bottom: 40.6px;
    background-image: url(../../../images/Logo.svg);
    background-position: center;
-   background-size: inherit;
    background-repeat: no-repeat;
 }
 

@@ -16,18 +16,22 @@
       <section class="section profile">
          <img src="./images/image.jpg" alt="Портрет Жак-Ива Кусто" class="profile__avatar">
          <div class="profile__info">
-            <h2 class="profile__info-name">Жак - Ив Кусто</h2><button class="button profile__edit-button"><img
-                  class="profile__edit-button-img" src="./images/EditIcon(2).svg" alt="Иконка редактирования"></button>
+            <h1 class="profile__info-name">Жак - Ив Кусто</h1>
+            <button type="button" class="button profile__edit-button">
+               <img class="profile__edit-button-img" src="./images/EditIcon(2).svg" alt="Иконка редактирования">
+            </button>
          </div>
-         <h3 class="profile__info-activity">Исследователь океана</h3><button class="button profile__add-bttn"><img
-               class="profile__add-bttn-img" src="./images/VectorAddIcon(2).svg" alt="Иконка добавления"></button>
+         <p class="profile__info-activity">Исследователь океана</p>
+         <button class="button profile__add-bttn">
+            <img class="profile__add-bttn-img" src="./images/VectorAddIcon(2).svg" alt="Иконка добавления">
+         </button>
       </section>
       <section class="section elements">
          <article class="element">
             <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Карачаевск</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -35,7 +39,7 @@
             <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Гора Эльбрус</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -43,7 +47,7 @@
             <img src="./images/Dombay.jpg" alt="Вид на гору Домбай" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Домбай</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -51,7 +55,7 @@
             <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Гора Эльбрус</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -59,7 +63,7 @@
             <img src="./images/Dombay.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Домбай</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -67,7 +71,7 @@
             <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
             <div class="element__description">
                <h2 class="element__title">Карачаево-Черкесия</h2>
-               <button type="submit" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
+               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
                      alt="Иконка сердечка"></button>
                   </div>
                </article>
@@ -80,8 +84,8 @@
             <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
             <form class="popup__form" name="editForm">
-               <input type="text" class="popup__input popup__input-name">
-               <input type="text" class="popup__input popup__input-work">
+               <input type="text" name="forename" class="popup__input popup__input_name">
+               <input type="text" name="work" class="popup__input popup__input_work">
                <button type="submit" class="button button_dark popup__button">Сохранить</button>
             </form>
          </div>
