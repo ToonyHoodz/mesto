@@ -1,4 +1,4 @@
-const buttonCloseEdit = document.querySelector('.popup__close-bttn');
+const buttonCloseEdit = document.querySelector('.popup__close-icon');
 const buttonOpenEdit = document.querySelector('.profile__edit-button');
 const popup = document.querySelector('.popup');
 const nameInput = document.querySelector('.popup__input_name');
@@ -9,24 +9,21 @@ const work = document.querySelector('.profile__info-activity');
 
 //слушатель на закрытие
 
-buttonCloseEdit.addEventListener('click', () => {
-   popupClose(popup);
-});
+buttonCloseEdit.addEventListener('click', popupClose);
 
 
 //функция закрытия попапа
-function popupClose(event) {
-   event.classList.toggle('popup_opened');
+
+function popupClose() {
+   popup.classList.remove('popup_opened');
 }
 
 //слушатель на открытие
-buttonOpenEdit.addEventListener('click', () => {
-   popupOpen(popup);
-});
+buttonOpenEdit.addEventListener('click', popupOpen );
 
 //функция открытия попапа и ввода данных
-function popupOpen(event) {
-   event.classList.toggle('popup_opened');
+function popupOpen() {
+   popup.classList.add('popup_opened');
    nameInput.value = name.textContent;
    workInput.value = work.textContent;
 }
