@@ -27,5 +27,6 @@
   .profile__info-name{
      font-size: 23px;
      padding-top: 3px;
+     max-width: 175px;
   }
 }
