@@ -5,7 +5,7 @@
    font-weight: 500;
    grid-area: Name;
    margin: 0;
-   align-self: flex-end; 
+   align-self: flex-end;
    font-family: 'inter', ‘Arial’, sans-serif;
    text-overflow: ellipsis;
    white-space: nowrap;
