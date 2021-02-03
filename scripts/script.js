@@ -9,6 +9,7 @@ const workProfile = document.querySelector('.profile__info-activity');
 const editForm = document.querySelector('.popup__container_edit');
 const addForm = document.querySelector('.popup__container_add');
 const popupAdd = document.querySelector('.popup__add');
+const buttonAdd = document.querySelector('.popup__button_add');
 const buttonOpenAdd = document.querySelector('.profile__add-bttn');
 const cardTemplate = document.querySelector('#card-template').content.querySelector('.card');
 const cardName = document.querySelector('.popup__input_cardName');
@@ -146,6 +147,8 @@ function addCard(event) {
    addForm.reset();
 }
 
+buttonAdd.addEventListener('click', addCard);
+
 
 //функции удаления карточки
 function deleteCard(event) {
@@ -163,14 +166,20 @@ function deleteCard(event) {
 function openImage(event) {
    if (event.target.classList.contains('card__image')) {
       popupImg.classList.add('popup_opened');
-      popupImg.src = event.target.src;
-      popupImgName.textContent = event.nextSibling;
-      console.log(popupImg.src)
+      const popupItem = popupImg.querySelector('.popup__image-item');
+      popupItem.src = event.target.src;
+      popupImgName.textContent = event.target.parentNode.nextSibling.nextSibling.firstChild.nextSibling.textContent
    }
 }
+
+
 
 function closePopupImage() {
    popupImg.classList.remove('popup_opened');
 }
 
+
+//слушатель на закрытие
 buttonCloseImg.addEventListener('click', closePopupImage);
+
+
