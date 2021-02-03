@@ -26,70 +26,48 @@
             <img class="profile__add-bttn-img" src="./images/VectorAddIcon(2).svg" alt="Иконка добавления">
          </button>
       </section>
-      <section class="section elements">
-         <article class="element">
-            <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Карачаевск</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
-         <article class="element">
-            <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Гора Эльбрус</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
-         <article class="element">
-            <img src="./images/Dombay.jpg" alt="Вид на гору Домбай" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Домбай</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
-         <article class="element">
-            <img src="./images/Elbrus.jpg" alt="Вид на гору Эльбрус" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Гора Эльбрус</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
-         <article class="element">
-            <img src="./images/Dombay.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Домбай</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
-         <article class="element">
-            <img src="./images/Karachaevsk.jpg" alt="Вид на церковь в Карачаевске" class="element__image">
-            <div class="element__description">
-               <h2 class="element__title">Карачаево-Черкесия</h2>
-               <button type="button" class="button element__like-bttn"><img src="./images/Heart.svg" class="element__image-heart"
-                     alt="Иконка сердечка"></button>
-                  </div>
-               </article>
+      <section class="section cards">
+     <template id= 'card-template'>
+        <div class="card">
+           <div class="card__image-container">
+           <img class="card__image">
+           <button class="card__delete-icon button"></button>
+         </div>
+           <div class="card__description">
+              <h3 class="card__name"></h3>
+              <button class="card__like-icon button"></button>
+           </div>
+            </div>
+        </template>
       </section>
       <footer class="section footer">
          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
-      <div class="popup">
-         <div class="popup__container">
+      <div class="popup popup__edit">
+         <form class="popup__container popup__container_edit" name="editForm">
             <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon"></button>
             <h3 class="popup__title">Редактировать профиль</h3>
-            <form class="popup__form" name="editForm">
-               <input type="text" name="forename" class="popup__input popup__input_name">
+               <input type="text" name="name" class="popup__input popup__input_name">
                <input type="text" name="work" class="popup__input popup__input_work">
-               <button type="submit" class="button button_dark popup__button">Сохранить</button>
+               <button type="submit" class="button button_dark popup__button popup__button_submit">Сохранить</button>
             </form>
-         </div>
       </div>
+      <div class="popup popup__add">
+         <form class="popup__container popup__container_add" name="editForm">
+            <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon"></button>
+            <h3 class="popup__title">Новое место</h3>
+            <input type="text" name="cardName" placeholder="Название" class="popup__input popup__input_cardName">
+            <input type="text" name="imgLink" placeholder="Ссылка на картинку" class="popup__input popup__input_imgLink">
+            <button type="submit" class="button button_dark popup__button popup__button_add ">Создать</button>
+         </form>
+      </div>
+            <div class="popup popup__image">
+               <div class="popup__image-container">
+                  <button class="button popup__close-bttn"><img src="./images/CloseIcon.svg" alt="иконка закрытия" class="popup__close-icon-img"></button>
+                  <img  alt="Изображение на весь экран" class="popup__image">
+                  <p class="popup__image-name"></p>
+               </div>
+            </div>
    </main>
    <script src="./scripts/script.js"></script>
 </body>
