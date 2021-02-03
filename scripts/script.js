@@ -1,14 +1,14 @@
 const buttonClose = document.querySelector('.popup__close-icon');
 const buttonCloseImg = document.querySelector('.popup__close-icon-img');
 const buttonOpenEdit = document.querySelector('.profile__edit-button');
-const popupEdit = document.querySelector('.popup__edit');
+const popupEdit = document.querySelector('.popup_edit');
 const nameInput = document.querySelector('.popup__input_name');
 const workInput = document.querySelector('.popup__input_work');
 const nameProfile = document.querySelector('.profile__info-name');
 const workProfile = document.querySelector('.profile__info-activity');
 const editForm = document.querySelector('.popup__container_edit');
 const addForm = document.querySelector('.popup__container_add');
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_add');
 const buttonAdd = document.querySelector('.popup__button_add');
 const buttonOpenAdd = document.querySelector('.profile__add-bttn');
 const cardTemplate = document.querySelector('#card-template').content.querySelector('.card');
@@ -16,7 +16,7 @@ const cardName = document.querySelector('.popup__input_cardName');
 const imgLink = document.querySelector('.popup__input_imgLink');
 const cards = document.querySelector('.cards');
 const likeButton = document.querySelector('.card__like-icon');
-const popupImg = document.querySelector('.popup__image');
+const popupImg = document.querySelector('.popup_image');
 const popupImgName = document.querySelector('.popup__image-name');
 const initialCards = [{
    name: 'Архыз',
