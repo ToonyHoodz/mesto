@@ -49,29 +49,29 @@ const initialCards = [
 //слушатель на закрытие
 
 buttonClose.addEventListener('click', () => {
-   popupCloseEdit(popupEdit);
+   ClosePopupEdit(popupEdit);
 });
 
 
 //функция закрытия попапа Edit
-function popupCloseEdit() {
+function closePopupEdit() {
    popupEdit.classList.remove('popup_opened');
 };
 
 //функция закрытия попапа Add
-function popupCloseAdd() {
+function closePopupAdd() {
    popupAdd.classList.remove('popup_opened');
 }
 //слушатель на закрытие попап Add
-buttonClose.addEventListener('click', popupCloseAdd);
+buttonClose.addEventListener('click', closePopupAdd);
 
 //слушатель на открытие popup Edit
 buttonOpenEdit.addEventListener('click', () => {
-   popupOpenEdit(popupEdit);
+   openPopupEdit(popupEdit);
 });
 
 //функция открытия попапа Edit и ввода данных
-function popupOpenEdit() {
+function openPopupEdit() {
    popupEdit.classList.add('popup_opened');
    nameInput.value = nameProfile.textContent;
    workInput.value = workProfile.textContent;
@@ -83,7 +83,7 @@ function editUserData(evt) {
    evt.preventDefault();
    nameProfile.textContent = nameInput.value;
    workProfile.textContent = workInput.value;
-   popupCloseEdit(popupEdit);
+   closePopupEdit(popupEdit);
 };
 
 //слушатель на замену данных
@@ -91,13 +91,13 @@ editForm.addEventListener('submit', editUserData);
 
 
 //функция открытия попапа Add и ввода данных
-function popupOpenAdd() {
+function openPopupAdd() {
    popupAdd.classList.add('popup_opened');
 };
 
 //слушатель на открытие popup Add
 buttonOpenAdd.addEventListener('click', () => {
-   popupOpenAdd(popupAdd);
+   openPopupAdd(popupAdd);
 });
 
 
@@ -112,7 +112,7 @@ function createCard(el) {
 
    newCard.addEventListener('click', openImage);
    newCard.addEventListener('click', deleteCard);
-   newCard.addEventListener('click', like);
+   newCard.addEventListener('click', likeOn);
    return newCard;
 }
 
@@ -127,7 +127,7 @@ function createCards() {
 createCards();
 
 //лайк 
-function like(event) {
+function likeOn(event) {
    if (event.target.classList.contains('card__like-icon')) {
       event.target.classList.toggle('card__like-icon_liked');
    }
@@ -143,7 +143,7 @@ function addCard(event) {
    addedCard.name = cardName.value;
    addedCard.link = imgLink.value;
    cards.prepend(createCard(addedCard));
-   popupCloseAdd(popupAdd);
+   closePopupAdd(popupAdd);
    addForm.reset();
 }
 
@@ -156,7 +156,7 @@ function deleteCard(event) {
    const item = event.currentTarget;
    if (event.target.classList.contains('card__delete-icon')){
       item.removeEventListener('click', deleteCard);
-      item.removeEventListener('click', like);
+      item.removeEventListener('click', likeOn);
       item.removeEventListener('click', openImage);
       item.remove();
    }
