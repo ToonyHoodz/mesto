@@ -1,0 +1,10 @@
+.card__like-icon{
+   background-color: transparent;
+   border: none;
+   margin-right: 15px;
+   align-self: center;
+   background-image: url(../../../images/Heart.svg);
+   width: 22px;
+   height: 19px;
+   background-repeat:no-repeat;
+}
