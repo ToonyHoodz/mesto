@@ -18,6 +18,7 @@ const cards = document.querySelector('.cards');
 const likeButton = document.querySelector('.card__like-icon');
 const popupImg = document.querySelector('.popup_image');
 const popupImgName = document.querySelector('.popup__image-name');
+const popupItem = popupImg.querySelector('.popup__image-item');
 const initialCards = [{
    name: 'Архыз',
    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
@@ -66,7 +67,7 @@ buttonOpenEdit.addEventListener('click', () => {
 });
 //функция открытия попапа Edit и ввода данных
 function openPopupEdit() {
-   popupEdit.classList.add('popup_opened');
+   openPopup(popupEdit);
    nameInput.value = nameProfile.textContent;
    workInput.value = workProfile.textContent;
 };
@@ -143,7 +144,6 @@ function deleteCard(event) {
 //функция открытия картинки
 function openImage(el) {
       openPopup(popupImg);
-      const popupItem = popupImg.querySelector('.popup__image-item');
       popupItem.src = el.link;
       popupImgName.textContent = el.name
    
