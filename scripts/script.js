@@ -1,4 +1,5 @@
-const buttonClose = document.querySelector('.popup__close-icon');
+const buttonCloseEdit = document.querySelector('.popup__close-bttn-edit');
+const buttonCloseAdd = document.querySelector('.popup__close-bttn-add');
 const buttonCloseImg = document.querySelector('.popup__close-icon-img');
 const buttonOpenEdit = document.querySelector('.profile__edit-button');
 const popupEdit = document.querySelector('.popup_edit');
@@ -15,37 +16,16 @@ const cardTemplate = document.querySelector('#card-template').content.querySelec
 const cardName = document.querySelector('.popup__input_cardName');
 const imgLink = document.querySelector('.popup__input_imgLink');
 const cards = document.querySelector('.cards');
-const likeButton = document.querySelector('.card__like-icon');
 const popupImg = document.querySelector('.popup_image');
 const popupImgName = document.querySelector('.popup__image-name');
 const popupItem = popupImg.querySelector('.popup__image-item');
-const initialCards = [{
-   name: 'Архыз',
-   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-}, {
-   name: 'Челябинская область',
-   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-}, {
-   name: 'Иваново',
-   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-}, {
-   name: 'Сахалин',
-   link: 'https://images.unsplash.com/photo-1579472140844-a42628a9dec6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80'
-}, {
-   name: 'Холмогорский район',
-   link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-}, {
-   name: 'Санкт-Петербург',
-   link: 'https://images.unsplash.com/photo-1556610961-2fecc5927173?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1520&q=80'
-}];
+
 //слушатель на закрытие Edit
-buttonClose.addEventListener('click', closePopupEdit);
+buttonCloseEdit.addEventListener('click', closePopupEdit);
 
 function closePopup(popup) {
    popup.classList.remove('popup_opened');
    document.removeEventListener('keydown', closePopupEsc);
-   popup.removeEventListener('click', closePopupOverlay);
-
 }
 
 function openPopup(popup) {
@@ -64,7 +44,7 @@ function closePopupAdd() {
    closePopup(popupAdd);
 }
 //слушатель на закрытие попап Add
-buttonClose.addEventListener('click', closePopupAdd);
+buttonCloseAdd.addEventListener('click', closePopupAdd);
 //слушатель на открытие popup Edit
 buttonOpenEdit.addEventListener('click', openPopupEdit);
 //функция открытия попапа Edit и ввода данных
@@ -109,7 +89,8 @@ function createCards() {
       const newCard = createCard(initialCards[i]);
       cards.append(newCard);
    }
-}
+} 
+
 //первичная загрузка карточек
 createCards();
 //лайк 
@@ -130,6 +111,8 @@ function addCard(event) {
    cards.prepend(createCard(addedCard));
    closePopup(popupAdd);
    addForm.reset();
+   const inputList = Array.from(addForm.querySelectorAll(configValidation.inputSelector));
+   toggleButtonState(inputList, buttonAdd);
 }
 buttonAdd.addEventListener('click', addCard);
 //функции удаления карточки
