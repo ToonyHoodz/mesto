@@ -38,22 +38,26 @@ const initialCards = [{
    name: 'Санкт-Петербург',
    link: 'https://images.unsplash.com/photo-1556610961-2fecc5927173?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1520&q=80'
 }];
-//слушатель на закрытие
-buttonClose.addEventListener('click', () => {
-   closePopupEdit(popupEdit);
-});
+//слушатель на закрытие Edit
+buttonClose.addEventListener('click', closePopupEdit);
 
 function closePopup(popup) {
    popup.classList.remove('popup_opened');
+   document.removeEventListener('keydown', closePopupEsc);
+   popup.removeEventListener('click', closePopupOverlay);
+
 }
 
 function openPopup(popup) {
    popup.classList.add('popup_opened');
+   document.addEventListener('keydown', closePopupEsc);
+   popup.addEventListener('click', closePopupOverlay);
 }
 
 //функция закрытия попапа Edit
 function closePopupEdit() {
    closePopup(popupEdit);
+
 };
 //функция закрытия попапа Add
 function closePopupAdd() {
@@ -62,16 +66,14 @@ function closePopupAdd() {
 //слушатель на закрытие попап Add
 buttonClose.addEventListener('click', closePopupAdd);
 //слушатель на открытие popup Edit
-buttonOpenEdit.addEventListener('click', () => {
-   openPopupEdit(popupEdit);
-});
+buttonOpenEdit.addEventListener('click', openPopupEdit);
 //функция открытия попапа Edit и ввода данных
 function openPopupEdit() {
    openPopup(popupEdit);
    nameInput.value = nameProfile.textContent;
    workInput.value = workProfile.textContent;
 };
-//функция замены данных из попапа
+//функция замены данных из попапа Edit
 function editUserData(evt) {
    evt.preventDefault();
    nameProfile.textContent = nameInput.value;
@@ -152,7 +154,28 @@ function openImage(el) {
 function closePopupImage() {
    closePopup(popupImg);
 }
-//слушатель на закрытие
+//слушатель на закрытие popup Image
 buttonCloseImg.addEventListener('click', closePopupImage);
-//слушатель на открытие
-buttonOpenEdit.addEventListener('click', openPopupEdit);
+
+
+
+
+//функция на закрытие попапов на ESC
+function closePopupEsc(evt) {
+   if (evt.key === "Escape"){
+      closePopup(document.querySelector('.popup_opened'));
+   }
+}
+
+//функция на закрытие по клику на оверлей
+function closePopupOverlay(evt){
+      if (evt.target === evt.currentTarget) {
+         closePopup(document.querySelector('.popup_opened'))
+      }
+   }
+
+
+
+
+
+
