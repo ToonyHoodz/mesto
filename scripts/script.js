@@ -67,9 +67,7 @@ function openPopupAdd() {
   openPopup(popupAdd);
 };
 //слушатель на открытие popup Add
-buttonOpenAdd.addEventListener('click', () => {
-   openPopupAdd(popupAdd);
-});
+buttonOpenAdd.addEventListener('click', openPopupAdd);
 //функции добавления карточек при загрузке страницы
 function createCard(el) {
    const newCard = cardTemplate.cloneNode(true);

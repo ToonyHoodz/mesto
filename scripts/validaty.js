@@ -1,4 +1,3 @@
-
 const configValidation = {
    formSelector: '.popup__container',
    inputSelector: '.popup__input',
@@ -8,68 +7,70 @@ const configValidation = {
    errorClass: 'popup__input-error_active'
 };
 
-const isValid = (formElement, inputElement) => {
+const isValid = (formElement, inputElement, config) => {
+inputElement.setCustomValidity('');
    if (!inputElement.validity.valid) {
-      showInputError(formElement, inputElement, inputElement.validationMessage);
+      createErrorMsg(inputElement);
+      showInputError(formElement, inputElement, inputElement.validationMessage, config);
    } else {
-      hideInputError(formElement, inputElement);
+      hideInputError(formElement, inputElement, config);
    }
 }
-const showInputError = (formElement, inputElement, errorMsg) => {
+const showInputError = (formElement, inputElement, errorMsg, config) => {
    const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-   inputElement.classList.add(configValidation.inputErrorClass);
-   errorElement.classList.add(configValidation.errorClass);
-   createErrorMsg(inputElement);
+   inputElement.classList.add(config.inputErrorClass);
+   errorElement.classList.add(config.errorClass);
    errorElement.textContent = errorMsg;
-}   
+}
 
+const hideInputError = (formElement, inputElement, config) => {
+   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
+   inputElement.classList.remove(config.inputErrorClass);
+   errorElement.classList.remove(config.errorClass);
+   errorElement.textContent = "";
+}
 
-const hasInvalidInput = (inputList) =>{
-   return inputList.some((inputElement) =>{  
+const hasInvalidInput = (inputList) => {
+   return inputList.some((inputElement) => {
       return !inputElement.validity.valid;
    })
 };
 
 
-const toggleButtonState = (inputList, buttonElement) =>{
-   if (hasInvalidInput(inputList)){
-      buttonElement.classList.add(configValidation.inactiveButtonClass);
+const toggleButtonState = (inputList, buttonElement, config) => {
+   if (hasInvalidInput(inputList)) {
+      buttonElement.classList.add(config.inactiveButtonClass);
       buttonElement.setAttribute('disabled', 'disabled');
    } else {
-      buttonElement.classList.remove(configValidation.inactiveButtonClass);
+      buttonElement.classList.remove(config.inactiveButtonClass);
       buttonElement.removeAttribute('disabled');
    }
 };
 
 
-const hideInputError = (formElement, inputElement) => {
-   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
-   inputElement.classList.remove(configValidation.inputErrorClass);
-   errorElement.classList.remove(configValidation.errorClass);
-   errorElement.textContent = "";
-}   
 
-const setEventListeners = (formElement) => {
-   const inputList = Array.from(formElement.querySelectorAll(configValidation.inputSelector));
-   const buttonElement = formElement.querySelector(configValidation.submitButtonSelector);
-   toggleButtonState(inputList, buttonElement);
+const setEventListeners = (formElement, config) => {
+   const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+   const buttonElement = formElement.querySelector(config.submitButtonSelector);
+   toggleButtonState(inputList, buttonElement, config);
    inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
-         isValid(formElement, inputElement);
-         toggleButtonState(inputList, buttonElement);
-      });   
-   });   
-};   
+         isValid(formElement, inputElement, config);
+         toggleButtonState(inputList, buttonElement, config);
+      });
+   });
+};
 
-const activateValidation = () => {
-   const formList = Array.from(document.querySelectorAll(configValidation.formSelector));
+const activateValidation = (config) => {
+   const formList = Array.from(document.querySelectorAll(config.formSelector));
    formList.forEach((formElement) => {
       formElement.addEventListener('submit', (evt) => {
          evt.preventDefault();
       });
-      setEventListeners(formElement);
+      setEventListeners(formElement, config);
    });
 };
+
 activateValidation(configValidation);
 
 
@@ -79,4 +80,4 @@ function createErrorMsg(inputElement) {
    } else {
       inputElement.setCustomValidity('Вы пропустили это поле');
    }
-}
+} 
