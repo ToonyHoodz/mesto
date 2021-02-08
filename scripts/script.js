@@ -109,8 +109,8 @@ function addCard(event) {
    cards.prepend(createCard(addedCard));
    closePopup(popupAdd);
    addForm.reset();
-   const inputList = Array.from(addForm.querySelectorAll(configValidation.inputSelector));
-   toggleButtonState(inputList, buttonAdd);
+   const inputList = Array.from(addForm.querySelectorAll('.popup__input'));
+   toggleButtonState(inputList, buttonAdd, configValidation);
 }
 buttonAdd.addEventListener('click', addCard);
 //функции удаления карточки
