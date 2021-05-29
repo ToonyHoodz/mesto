@@ -1,4 +1,4 @@
-import { closePopup} from './popup.js';
+import {closePopup} from './popup.js';
 import Card from "./card.js";
 import FormValidator from  './validaty.js';
 
@@ -13,19 +13,18 @@ const formList = Array.from(document.querySelectorAll(configValidation.formSelec
 formList.forEach((el) =>{
    const formElement = new FormValidator (configValidation, el);
    const validityCheck = formElement.activateValidation(el, configValidation);
-   document.addEventListener('click', function (evt) {
-      if (evt.target.classList.contains('popup')) {
-         closePopup(popupImg)
-      }
+   const popupList = Array.from(document.querySelectorAll('.popup'));
+   popupList.forEach((popup) =>{
+      popup.addEventListener('click',() =>{
+         closePopup(popupImg);
+      })
    });
 });
 
-formList.forEach(function (formElement) {
-   window.addEventListener('click', function (evt) {
-      if (evt.target.classList.contains('popup')) {
-         closePopup(formElement)
-      }
-   });
+formList.forEach((container) =>{
+container.addEventListener('click', () =>{
+   closePopup(container);
+})
 });
 
 
