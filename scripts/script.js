@@ -13,7 +13,6 @@ formList.forEach((el) =>{
    const formElement = new FormValidator (configValidation, el);
    const validityCheck = formElement.activateValidation(el, configValidation);
    const popupList = Array.from(document.querySelectorAll('.popup'));
-);
 });
 
 formList.forEach((container) =>{
