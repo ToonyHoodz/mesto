@@ -13,15 +13,21 @@ formList.forEach((el) =>{
    const formElement = new FormValidator (configValidation, el);
    const validityCheck = formElement.activateValidation(el, configValidation);
    const popupList = Array.from(document.querySelectorAll('.popup'));
+   popupList.forEach((popup) =>{
+      popup.addEventListener('click',() =>{
+         closePopup(popupImg);
+      })
+   popup.addEventListener('click', () => {
+         openImage(this._name, this._link);
+      })
+   });
 });
 
 formList.forEach((container) =>{
 container.addEventListener('click', () =>{
    closePopup(container);
 });
-container.addEventListener('click', () => {
-   openImage(this._name, this._link);
-})
+
 });
 
 
