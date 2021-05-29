@@ -1,10 +1,9 @@
-import {closePopup} from './popup.js';
+import {closePopup, openImage} from './popup.js';
 import Card from "./card.js";
 import FormValidator from  './validaty.js';
 
-//closePopupEdit, closePopupAdd, openPopupEdit, editUserData, openPopupAdd, addEventListeners, closePopupOverlay, closePopupEsc
 initialCards.forEach((el) => {
-   const card = new Card(el.name, el.link);
+   const card = new Card(el.name, el.link, openImage);
    const cardEl = card.generateCard();
    cards.append(cardEl);
 });
@@ -14,16 +13,15 @@ formList.forEach((el) =>{
    const formElement = new FormValidator (configValidation, el);
    const validityCheck = formElement.activateValidation(el, configValidation);
    const popupList = Array.from(document.querySelectorAll('.popup'));
-   popupList.forEach((popup) =>{
-      popup.addEventListener('click',() =>{
-         closePopup(popupImg);
-      })
-   });
+);
 });
 
 formList.forEach((container) =>{
 container.addEventListener('click', () =>{
    closePopup(container);
+});
+container.addEventListener('click', () => {
+   openImage(this._name, this._link);
 })
 });
 
@@ -32,7 +30,7 @@ container.addEventListener('click', () =>{
 //функция добавления  карточки
 function addCard(event) {
    event.preventDefault();
-   const card = new Card(cardName.value, imgLink.value)
+   const card = new Card(cardName.value, imgLink.value, openImage)
    const cardEl = card.generateCard();
    addForm.reset();
    closePopup(popupAdd);
