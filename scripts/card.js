@@ -3,7 +3,7 @@ export default class Card {
    constructor(name, link, openImage) {
       this._name = name;
       this._link = link;
-      
+      this._openImage = openImage; 
    }
    _getTemplate() {
       const cardEl = document
@@ -21,7 +21,7 @@ export default class Card {
    };
    _seteventLiteners() {
       this._element.querySelector('.card__image').addEventListener('click', () => {
-         openImage(this._name, this._link);
+        this._openImage(this._name, this._link);
          document.addEventListener('keydown', this._closePopupEsc);
       });
       this._element.querySelector('.card__delete-icon').addEventListener('click', () => {
