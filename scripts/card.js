@@ -21,9 +21,8 @@ export default class Card {
    };
    _seteventLiteners() {
       this._element.querySelector('.card__image').addEventListener('click', () => {
-        this._openImage(this._name, this._link);
-         document.addEventListener('keydown', this._closePopupEsc);
-      });
+        this._openImage(this._name, this._link); 
+           });
       this._element.querySelector('.card__delete-icon').addEventListener('click', () => {
          this._element.remove();
          this._elemnt = null;
@@ -31,19 +30,6 @@ export default class Card {
       this._element.querySelector('.card__like-icon').addEventListener('click', (event) =>{
             event.target.classList.toggle('card__like-icon_liked');
       });
-      buttonCloseImg.addEventListener('click', () => {
-         this._closePopupImage();
-      })
-   };
-
-   _closePopupEsc(evt) {
-      if (evt.key === "Escape"){
-         closePopup(document.querySelector('.popup_opened'));
-      }
-   };
-   _closePopupImage() {
-     closePopup(popupImg);
-      document.removeEventListener('keydown', this._closePopupEsc)
    };
 }
 

@@ -1,4 +1,4 @@
-export { closePopup, openPopup, openImage};
+export { closePopup, openPopup, openImage, closePopupOverlay};
 //универсальная функция для закрытия попапа
 function closePopup(popup) {
    popup.classList.remove('popup_opened');
@@ -8,6 +8,7 @@ function closePopup(popup) {
 function openPopup(popup) {
    popup.classList.add('popup_opened');
    document.addEventListener('keydown', closePopupEsc);
+   popup.addEventListener('click', closePopupOverlay);
 }
 
 
@@ -38,8 +39,8 @@ function openPopupAdd() {
 };
 
 //функция на закрытие по клику на оверлей
-function closePopupOverlay(evt) {
-   if (evt.target === evt.currentTarget) {
+function closePopupOverlay(event) {
+   if (event.target === event.currentTarget) {
       closePopup(document.querySelector('.popup_opened'))
    }
 }
@@ -57,6 +58,11 @@ function openImage(name, link) {
    openPopup(popupImg);
 }
 
+function closePopupImage() {
+   closePopup(popupImg);
+   document.removeEventListener('keydown', closePopupEsc)
+};
+
 
 //функция добавления обработчиков
 function addEventListeners() {
@@ -70,6 +76,8 @@ function addEventListeners() {
    editForm.addEventListener('submit', editUserData);
    //слушатель на открытие popup Add
    buttonOpenAdd.addEventListener('click', openPopupAdd);
+   buttonCloseImg.addEventListener('click', closePopupImage);
+
 }
 addEventListeners();
 
