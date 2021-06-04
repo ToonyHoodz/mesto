@@ -10,13 +10,11 @@ export default class PopupWithForm extends Popup {
       this._inputValues = {};
       this._inputList.forEach(input => 
       this._inputValues[input.name] = input.value);
-      console.log(this._inputValues.cardName);
-      console.log(this._inputValues.imglink);
       return this._inputValues;
    }
    setEventLesteners() {
       super.setEventLesteners();
-      this._formElement.addEventListener('submit', this._submit)
+      this._formElement.addEventListener('submit', this._submit);
    }
    close() {
       this._formElement.reset();

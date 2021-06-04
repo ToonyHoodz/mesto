@@ -22,6 +22,8 @@ export default class Card {
    };
    _seteventLiteners() {
       this._element.querySelector('.card__image').addEventListener('click', () => {
+         console.log(this);
+         
         this._openImage(this._name, this._link); 
            });
       this._element.querySelector('.card__delete-icon').addEventListener('click', () => {
