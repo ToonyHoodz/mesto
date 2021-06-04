@@ -51,16 +51,18 @@ function submitCard (data) {
       cardName: name,
       imglink: link
    } = data;
-
    const card = new Card ({
       name,
       link }, 
-   cardTemplate,
-   () => openPopupImage.open(data));
+      cardTemplate, () => openPopupImage.open({
+         name,
+         link
+      }));
    const cardEl = card.generateCard();
    firstCards.newItem(cardEl);
    buttonAdd.setAttribute('disabled', 'disabled');
    buttonAdd.classList.add(configValidation.inactiveButtonClass);
+   console.log(this);
 }
 
 //validation
