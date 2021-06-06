@@ -12,8 +12,10 @@ nameProfile,
 workProfile,
 editForm,
 addForm,
-popupAdd,
-buttonAdd,
+nameSelector,
+subSelector,
+nameInput,
+workInput,
 buttonOpenAdd,
 cards,
 popupImg,
@@ -62,8 +64,6 @@ function submitCard (data) {
    });
    const cardEl = card.generateCard();
    firstCards.newItem(cardEl);
-//   buttonAdd.setAttribute('disabled', 'disabled');
- //  buttonAdd.classList.add(configValidation.inactiveButtonClass);
 }
 
 //validation
@@ -79,13 +79,16 @@ formEdit.activateValidation();
 
 const editProfile = new PopupWithForm(popupEditSelector, submitProfile);
 editProfile.setEventLesteners();
-const fillProfile = new UserInfo(nameProfile, workProfile);
+const fillProfile = new UserInfo(nameSelector,
+subSelector);
 
 buttonOpenEdit.addEventListener('click', () =>{
    formEdit.toggleButtonState();
    editProfile.open();
-   fillProfile.getUserInfo();
-   fillProfile.setUserInfo();
+  fillProfile.getUserInfo();
+fillProfile.setUserInfo(nameProfile.textContent, workProfile.textContent);
+   nameInput.value = nameProfile.textContent;
+   workInput.value = workProfile.textContent;
 });
 
 function submitProfile(data) {

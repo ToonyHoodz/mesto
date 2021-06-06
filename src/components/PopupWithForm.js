@@ -25,7 +25,4 @@ export default class PopupWithForm extends Popup {
       this._hadleSubmit(this._getInputValues());
       this.close();
    }
-   open(){
-      super.open();
-   }
 }

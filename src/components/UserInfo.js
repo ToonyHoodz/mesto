@@ -1,7 +1,7 @@
 export default class UserInfo {
    constructor(nameSelector, subSelector) {
-      this._profileName = nameSelector;
-      this._profileSub = subSelector;
+      this._profileName = document.querySelector(nameSelector);
+      this._profileSub = document.querySelector(subSelector);
       this._work = document.querySelector('#work-input');
       this._name = document.querySelector('#name-input');
    }
@@ -11,8 +11,8 @@ export default class UserInfo {
          work: this._profileSub.textContent,
       }
    }
-   setUserInfo(){
-      this._name.value = this.getUserInfo().name;
-      this._work.value = this.getUserInfo().work;
+   setUserInfo(name, work) {
+      this._profileName.textContent = name;
+      this._profileSub.textContent = work;
    }
 }

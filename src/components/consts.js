@@ -43,6 +43,9 @@ export const cardTemplate = document.querySelector('#card-template').content.que
 export const popupAddSelector = '.popup_add';
 export const popupImageSelector = '.popup_image';
 export const popupEditSelector = '.popup_edit';
+export const nameSelector = '.profile__info-name';
+export const subSelector = '.profile__info-activity';
+
 
 
 export const selectors = {
