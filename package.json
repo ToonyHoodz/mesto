@@ -2,7 +2,7 @@
   "name": "mesto",
   "version": "1.0.0",
   "description": "Проект с нативным Javascript, используется HTML, CSS, JS, осуществленна адаптивная верстка с использованием медиазапросов или Grid Layout.",
-  "main": "index.js",
+  "main": "../src/pages/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"

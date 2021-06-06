@@ -40,9 +40,12 @@ export const imgLink = document.getElementById('imglink');
 export const cards = document.querySelector('.cards');
 export const popupImg = document.querySelector('.popup_image');
 export const cardTemplate = document.querySelector('#card-template').content.querySelector('.card');
+export const popupAddSelector = '.popup_add';
+export const popupImageSelector = '.popup_image';
+export const popupEditSelector = '.popup_edit';
 
 
-export const configValidation = {
+export const selectors = {
    formSelector: '.popup__container',
    inputSelector: '.popup__input',
    submitButtonSelector: '.popup__button',

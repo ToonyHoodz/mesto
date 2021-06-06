@@ -6,17 +6,17 @@ export default class FormValidator{
       this._buttonElement = formElement.querySelector(this._data.submitButtonSelector);
    }
    _setEventListeners() {
-      this._toggleButtonState();
+      this.toggleButtonState();
       this._inputList.forEach((inputElement) => {
          inputElement.addEventListener('input', () => {
             this._isValid(inputElement);
-            this._toggleButtonState();
+            this.toggleButtonState();
          });
       });
    };
-   _toggleButtonState = () => {
-      this._buttonElement.setAttribute('disabled', 'disabled');
+   toggleButtonState = () => {
       if (this._hasInvalidInput(this._inputList)) {
+         this._buttonElement.setAttribute('disabled', 'disabled');
          this._buttonElement.classList.add(this._data.inactiveButtonClass);
       } else {
          this._buttonElement.classList.remove(this._data.inactiveButtonClass);

@@ -4,26 +4,25 @@ export default class Card {
       this._link = data.link;
       this._openImage = openImage;
       this._template = template;
-   }
+      }
    _getTemplate() {
       const cardEl = document
-         .querySelector('#card-template')
-         .content.querySelector('.card')
-         .cloneNode(true);
+      .querySelector('#card-template')
+      .content.querySelector('.card')
+      .cloneNode(true);
       return cardEl;
    }
    generateCard() {
       this._element = this._getTemplate();
+     const cardImage = this._element.querySelector('.card__image');
       this._element.querySelector('.card__name').textContent = this._name;
-      this._element.querySelector('.card__image').src = this._link;
-      this._element.querySelector('.card__image').alt = this._link;
+      cardImage.src = this._link;
+      cardImage.alt = this._name;
       this._seteventLiteners();
       return this._element;
    };
    _seteventLiteners() {
       this._element.querySelector('.card__image').addEventListener('click', () => {
-         console.log(this);
-         
         this._openImage(this._name, this._link); 
            });
       this._element.querySelector('.card__delete-icon').addEventListener('click', () => {
